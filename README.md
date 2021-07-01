@@ -48,5 +48,41 @@ name과 만료 일자를 설정하고 api를 체크해서 access token을 생성
 
 ![image](https://user-images.githubusercontent.com/50227342/124052819-1dfd8d80-da5a-11eb-811f-ed6e10448176.png)
 
+그리고 Jenkins와 Gitlab을 연동해보자. Dashboard > Manager Jenkins > configure System 에서할 수 있다.
+
+![image](https://user-images.githubusercontent.com/50227342/124056691-25746500-da61-11eb-967c-3dc241d8872a.png)
+
+Connetcion name에 아무 이름이나 쓰고, URL에 깃랩 주소를 적어주며, Credentials에 add를 눌러 Jenkins를 추가해준다.
+
+설정에서 종류는 GitLab API token으로 설정해주고, API token에서 아까 복사한 토큰 값을 넣어준다. ID는 깃랩의 아이디를 써주고 add를 하여 생성한다.
+
+그리고 오른쪽에 Test Connection을 클릭해서 Success가 나오면 성공이다. 적용 후 저장을 눌러서 나온다.
+
+## Nginx 설치 후 설정
+
+docker로 nginx 정적 웹서버를 설치해보자.
+
+배포될 폴더 dist를 생성해준 뒤, Nginx를 설치한다.
+```
+mkdir dist
+docker run --name nginx -d -p 80:80 -v c:/Users/dlwlgns/dist:/usr/share/nginx/html nginx
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
