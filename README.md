@@ -67,6 +67,9 @@ docker로 nginx 정적 웹서버를 설치해보자.
 mkdir dist
 docker run --name nginx -d -p 80:80 -v c:/Users/dlwlgns/dist:/usr/share/nginx/html nginx
 ```
+설치를 마쳤으면 dist 폴더에 간단한 index.html 파일을 생성해서 잘 작동하는지 확인한다.
+
+![image](https://user-images.githubusercontent.com/50227342/124064734-54460780-da70-11eb-9a08-79eea957ddde.png)
 
 
 
