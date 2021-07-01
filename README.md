@@ -71,7 +71,7 @@ docker run --name nginx -d -p 80:80 -v c:/Users/dlwlgns/dist:/usr/share/nginx/ht
 
 ![image](https://user-images.githubusercontent.com/50227342/124064734-54460780-da70-11eb-9a08-79eea957ddde.png)
 
-## Jenkins pipeline을 이용해서 gitlab 프로젝트 자동 배포
+## Jenkins pipeline을 이용해서 gitlab 프로젝트 자동 빌드
 
 http://localhost:9090/view/all/newJob 로 접속하여 pipeline 이름을 적당히 넣어준다.
 
@@ -121,6 +121,17 @@ tools에 nodejs 'node(아까 쓴 이름)' 을 써주고, npm install과 npm run 
 
 ![image](https://user-images.githubusercontent.com/50227342/124112355-2e872580-daa5-11eb-8207-68a84dc89892.png)
 
+## docker pipeline 을 이용해서 도커 컨테이너 내부 파일들을 로컬로 이동시키기
+
+프롬프트 창에서 해당 명령어를 이용해 실행되고 있는 도커를 확인한다.
+```
+docker ps
+```
+![image](https://user-images.githubusercontent.com/50227342/124129420-bdea0400-dab8-11eb-85b8-a8a9c5c85603.png)
+
+2개 중, 위의 jenkins를 써야하므로 이것의 이름을 사용해준다.
+
+그러나 이 시점에서 로컬과 도커를 다시 연결해주기 위해, 도커를 완전히 밀고 다시 시작해야한다는 것을 깨달았다. 그래서 이 뒷 부분의 이야기는...내일인 금요일부터 다시 시작할 것이다....
 
 
 
