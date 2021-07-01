@@ -111,10 +111,11 @@ git credentialsId: '~~~~~~~~~~', url: 'https://lab.ssafy.com/dlwlgns102/vue-proj
 ```
 와 같이 생성이 되는데, 리포 URL과 위에서 만들었던 Credentials 를 넣어주면 코드를 생성할 수 있다.
 
-nodeJS를 사용하기 위해 Jenkins 관리 > Global Tool Configuration 으로 들어간다. 그리고 NodeJS를 찾아서 name에 node를 써준다.
+nodeJS를 사용하기 위해 Jenkins 관리 > Global Tool Configuration 으로 들어간다. 그리고 NodeJS를 찾아서 name에 node를 써준다. 여기서 주의할 점은 nodeJS의 버전을 로컬에 있는 프로젝트와 같은 버전으로 맞춰줘야 한다는 것이다.
 
 ![image](https://user-images.githubusercontent.com/50227342/124086943-7f3e5480-da8c-11eb-8a66-f88736adae35.png)
 
+tools에 nodejs 'node(아까 쓴 이름)' 을 써주고, npm install과 npm run build는 sh로 실행해준다.
 
 
 
