@@ -117,6 +117,9 @@ nodeJS를 사용하기 위해 Jenkins 관리 > Global Tool Configuration 으로 
 
 tools에 nodejs 'node(아까 쓴 이름)' 을 써주고, npm install과 npm run build는 sh로 실행해준다.
 
+빌드가 되었다면 workspace에서 dist 폴더 안에 빌드 결과물이 있음을 확인할 수 있다.
+
+![image](https://user-images.githubusercontent.com/50227342/124112355-2e872580-daa5-11eb-8207-68a84dc89892.png)
 
 
 
