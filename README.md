@@ -71,6 +71,30 @@ docker run --name nginx -d -p 80:80 -v c:/Users/dlwlgns/dist:/usr/share/nginx/ht
 
 ![image](https://user-images.githubusercontent.com/50227342/124064734-54460780-da70-11eb-9a08-79eea957ddde.png)
 
+## Jenkins pipeline을 이용해서 gitlab 프로젝트 자동 배포
+
+http://localhost:9090/view/all/newJob 로 접속하여 pipeline 이름을 적당히 넣어준다.
+
+pipeline을 선택하고 ok를 누른다.
+
+gitlab에서 jenkins에 트리거를 전송하기 위해 jenkins에서 제공하는 secret token이 필요하다. 이 코드는 생성된 작업 아이템 설정에서 Build Trigger 섹션 중 Build when a change is pushed to GitLab. GitLab webhook URL: ~~~ 를 클릭하여 고급 버튼을 누르면 생성할 수 있다.
+
+복사를 하고, 저장을 누르고 나왔다면, 이제 소스코드가 있는 깃랩에서 push 이벤트에 대한 trigger를 만들어줄 차례이다. 먼저 깃랩에 settings > integration으로 들어간다.(프로필의 settings가 아니다. 좌측 탭에서 settings임을 주의하자.)
+
+여기서 URL칸에는  Build when a change is pushed to GitLab. GitLab webhook URL: 뒷 부분의 URL을 적어야하는데, localhost 관련으로 block이 되어버리는 문제가 있다. 그러므로 ngrok을 깔아서 포워딩 시킨 주소를 사용해야 한다.
+
+https://ngrok.com/download 에 들어가서 다운받아 실행한 후, ngrok http 9090을 입력하면 포워딩 주소가 나오고 이를 그대로 사용하는 것이 아니라 http://[ngrok에서 얻은 로컬호스트 주소]/project/[생성한 파이프라인 프로젝트명]/ 과 같이 사용해주어야 한다.
+
+그리고 시크릿 토큰은 아까 얻은 그 시크릿 토큰을 입력해주고, 브랜치는 master를 입력한다.
+
+그리고 그 후 add webhook를 클릭해 설정을 저장하고 test 버튼을 통해 테스트하여 파란색 메시지로 HTTP 200이 나오면 성공이다.
+
+그렇다면 이제 파이프라인을 작성할 시간이다. jenkins에서 아까 만든 아이템 pipeline_test에서 구성 > pipeline 탭을 클릭한다.
+
+다음은 pipeline 스크립트의 샘플 구조이다.
+
+![image](https://user-images.githubusercontent.com/50227342/124072174-624d5580-da7b-11eb-8b6b-2876b1f7e518.png)
+
 
 
 
