@@ -133,6 +133,15 @@ docker ps
 
 그러나 이 시점에서 로컬과 도커를 다시 연결해주기 위해, 도커를 완전히 밀고 다시 시작해야한다는 것을 깨달았다. 그래서 이 뒷 부분의 이야기는...내일인 금요일부터 다시 시작할 것이다....
 
+## docker jenkins 삭제 후 재 설치
+
+도커에 들어가 jenkins를 삭제하고 이 코드로 다시 도커와 로컬을 연결해주어야 한다.
+```
+docker run -d -u root -p 9090:8080 --name=jenkins -v c:/Users/[사용자 pc이름]/dist:/var/jenkins_home/dist jenkins/jenkin
+```
+그 후 과정은 위와 동일하다.
+
+
 
 
 
