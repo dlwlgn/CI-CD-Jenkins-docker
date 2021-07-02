@@ -141,10 +141,21 @@ docker run -d -u root -p 9090:8080 --name=jenkins -v c:/Users/[사용자 pc이�
 ```
 그 후 과정은 위와 동일하다.
 
+빌드 후 해당 스크립트 코드를 이용해서 로컬과 연결된 폴더로 옮겨주는 부분을 스크립트에 추가한다.
+```
+cp -r /var/jenkins_home/workspace/pipeline_test/dist /var/jenkins_home
+```
+그리고 로컬 dist 폴더에 빌드된 정적 파일들이 들어와있음을 확인할 수 있다.
 
+![image](https://user-images.githubusercontent.com/50227342/124215440-f88e8380-db2e-11eb-8bc9-92b638dd29ba.png)
 
+그 다음은 docker에서 nginx를 실행해주고 nginx에서 설정한 주소인 localhost로 들어가보면??
 
+![image](https://user-images.githubusercontent.com/50227342/124215491-1360f800-db2f-11eb-94bc-3a631c1888bf.png)
 
+배포가 잘 되었음을 확인할 수 있다.
+
+![image](https://user-images.githubusercontent.com/50227342/124215552-2e336c80-db2f-11eb-83a4-a9e09d8dafb9.png)
 
 
 
