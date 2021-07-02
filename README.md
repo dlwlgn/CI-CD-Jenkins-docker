@@ -137,7 +137,7 @@ docker ps
 
 도커에 들어가 jenkins를 삭제하고 이 코드로 다시 도커와 로컬을 연결해주어야 한다.
 ```
-docker run -d -u root -p 9090:8080 --name=jenkins -v c:/Users/[사용자 pc이름]/dist:/var/jenkins_home/dist jenkins/jenkin
+docker run -d -u root -p 9090:8080 --name=jenkins -v c:/Users/[사용자 pc이름]/dist:/var/jenkins_home/dist jenkins/jenkins
 ```
 그 후 과정은 위와 동일하다.
 
